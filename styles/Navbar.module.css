@@ -1,0 +1,127 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding:12px;
+}
+
+.nav_logo{
+    display: flex;
+    width: 95%;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 20px;
+}
+
+.nav_logo p{
+    color: 171717;
+    font-size: 38px;
+    font-weight: 900;
+}
+
+.nav_logo span{
+    color: var(--pink)
+}
+
+.nav_menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 15px;
+    color: 626262;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.nav_menu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+.navbar .search{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .searchbar{
+    justify-items: center;
+    width: 90%;
+    font-size: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: solid;
+    border-color: var(--dark);
+    border-width: 2px;
+    height: 38px;
+    outline: none;
+}
+
+.navbar .search button{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 43px;
+    width: 40px;
+    border: solid;
+    border-width: 2px ;
+    border-color: var(--dark);
+    border-left: none;
+    background-color: var(--yellow);
+}
+
+.navbar .search button:active{
+    background-color: var(--pink);
+}
+
+.nav_menu hr{
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--pink);
+}
+
+.nav_login_cart{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+.nav_login_cart button{
+    width: 80px;
+    height: 40px;
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 500;
+    background: var(--pink);
+    cursor: pointer;
+    border: none;
+    border: var(--dark) solid 2px;
+
+}
+
+.nav_login_cart button:active{
+    background-color: #f3f3f3;
+}
+
+.nav_cart_count{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    border-radius: 50%;
+    font-size: 14px;
+    background-color: red;
+    color: white;
+}
