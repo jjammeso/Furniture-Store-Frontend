@@ -5,17 +5,23 @@ import { productsAtom } from '@/store'
 import { cartAtom } from '@/store'
 import Image from 'next/image'
 import { removeFromCart, addToCart, getTotalCostAndItems} from '@/cartlogic'
+import { useRouter } from 'next/router'
 
 export default function CartItems() {
     const [allProducts, setAllProducts] = useAtom(productsAtom);
     const [totalCost, setTotalCost] = useState(0);
     const [cart,setCart] = useAtom(cartAtom)
+    const router = useRouter()
 
     useEffect(() => {
         if (allProducts && allProducts.length > 0) {
             setTotalCost(getTotalCostAndItems(cart, allProducts)[0]);
         }
     }, [cart, allProducts]); 
+
+    function checkOut(){
+        router.push('/comingsoon')
+    }
 
   return (
     <div className={styles.cartitems}>
@@ -68,7 +74,7 @@ export default function CartItems() {
                         <h3>${totalCost}</h3>
                     </div>
                 </div>
-                <button>PROCEED TO CHECKOUT</button>
+                <button onClick={checkOut}>PROCEED TO CHECKOUT</button>
             </div>
             <div className={styles.cartitems_promocode}>
                     <p>If you have a promo code, Enter it here</p>

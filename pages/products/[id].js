@@ -33,21 +33,20 @@ function Product() {
       <div className={styles.productdisplay_right}>
         <h1>{product.name}</h1>
         <div className={styles.productdisplay_right_star}>
-          <Image src={star_icon} width={20} height={20} alt='' />
+          {/* <Image src={star_icon} width={20} height={20} alt='' />
           <Image src={star_icon} width={20} height={20} alt='' />
           <Image src={star_icon} width={20} height={20} alt='' />
           <Image src={star_icon} width={20} height={20}  alt='' />
-          <Image src={star_dull_icon} width={20} height={20} alt='' />
-          <p>(122)</p>
+          <Image src={star_dull_icon} width={20} height={20} alt='' /> */}
         </div>
         <div className={styles.productdisplay_right_prices}>
-          <div className={styles.productdisplay_right_price_old}>${product.old_price}</div>
-          <div className={styles.productdisplay_right_price_new}>${product.new_price}</div>
+          <p>Selling at:</p><div className={styles.productdisplay_right_price_new}>${product.new_price}</div>
+          <p style={{fontWeight:'400'}}>Actual Price: </p><div className={styles.productdisplay_right_price_old}>${product.old_price}</div>
         </div>
         <div className={styles.productdisplay_right_description}>
         {product.description}
         </div>
-        <div className={styles.productdisplay_right_size}>
+        {/* <div className={styles.productdisplay_right_size}>
           <h1>Seelct Size</h1>
           <div className={styles.productdisplay_right_sizes}>
             <div>S</div>
@@ -56,11 +55,10 @@ function Product() {
             <div>XL</div>
             <div>XXL</div>
           </div>
-        </div>
+        </div> */}
         <button onClick={()=>addToCart(product.id, setCart)}>ADD TO CART</button>
-        <p className={styles.productdisplay_right_category}><span>Category:</span> Women, T-shirt, Crop Top</p>
-        <p className={styles.productdisplay_right_category}><span>Tags:</span> Modern, Latest</p>
-        
+        <p className={styles.productdisplay_right_category}><span>Category:</span> {product.category}</p>
+        {/* <p className={styles.productdisplay_right_category}><span>Tags:</span> Modern, Latest</p> */}
       </div>
     </div>
     <DescriptionBox product={product}/>
