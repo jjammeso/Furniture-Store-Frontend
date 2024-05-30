@@ -17,7 +17,7 @@ export default function Comingsoon() {
                 marginRight:'20%',
                 marginLeft: '20%'
             }}>
-            Thank you for exploring my e-commerce project. The checkout feature you're trying to access is currently in development. 
+            Thank you for exploring my e-commerce project. The checkout feature you&apos;re trying to access is currently in development. 
         Please check back for updates, and feel free to review other aspects of the site. Your interest in my work is greatly appreciated!
     
             </p>
