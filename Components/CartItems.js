@@ -11,6 +11,7 @@ export default function CartItems() {
     const [allProducts, setAllProducts] = useAtom(productsAtom);
     const [totalCost, setTotalCost] = useState(0);
     const [cart,setCart] = useAtom(cartAtom)
+    const [promoCode, setPromoCode] = useState('')
     const router = useRouter()
 
     useEffect(() => {
@@ -21,6 +22,16 @@ export default function CartItems() {
 
     function checkOut(){
         router.push('/comingsoon')
+    }
+
+    function handleInputChange(event){
+        setPromoCode(event.target.value)
+    }
+
+    function submitPromo(){
+        if(promoCode != '' || null)
+        alert('Promo code applied')
+        else alert('please enter a valid promo code')
     }
 
   return (
@@ -79,8 +90,8 @@ export default function CartItems() {
             <div className={styles.cartitems_promocode}>
                     <p>If you have a promo code, Enter it here</p>
                     <div className={styles.cartitems_promobox}>
-                        <input type='text' placeholder='promo code' />
-                        <button>Submit</button>
+                        <input type='text' placeholder='promo code' value={promoCode} onChange={handleInputChange}/>
+                        <button  onClick={submitPromo}>Submit</button>
                     </div>
             </div>
         </div>
