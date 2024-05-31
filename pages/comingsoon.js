@@ -19,7 +19,6 @@ export default function Comingsoon() {
             }}>
             Thank you for exploring my e-commerce project. The checkout feature you&apos;re trying to access is currently in development. 
         Please check back for updates, and feel free to review other aspects of the site. Your interest in my work is greatly appreciated!
-    
             </p>
         </div>
   )
