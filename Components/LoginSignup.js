@@ -5,7 +5,6 @@ import { getDefaultCart } from '@/cartlogic';
 import { cartAtom } from '@/store';
 import { useAtom } from 'jotai';
 import { isLoggedInAtom } from '@/store';
-import { Margarine } from 'next/font/google';
 
 const LoginSignup = () => {
   const router = useRouter();
@@ -26,8 +25,9 @@ const LoginSignup = () => {
   }
 
   const login = () => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/login`, {
-      method: 'POST',
+    if(userDetails.email != null && userDetails.email != '' && userDetails.password != null && userDetails.password != ''){
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/login`, {
+        method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -43,15 +43,21 @@ const LoginSignup = () => {
         setError(responseData)
       }
     }).catch(error => console.log(error));
+  }else{
+    setError({message:"Enter valid information"})
+  }
   }
 
   const signup = () => {
     if (!isChecked) setError({message:'Please accept the terms'})
     else {
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/signup`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
+      if(userDetails.name != null && userDetails.name != '' && userDetails.password != null && userDetails.password != ''
+        && userDetails.email != null && userDetails.email != ''
+      ){
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/signup`, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(userDetails),
@@ -66,7 +72,10 @@ const LoginSignup = () => {
           setError(responseData)
         }
       }).catch(error => console.log(error));
+    }else{
+      setError({message:"Enter valid information"})
     }
+  }
   }
 
   return (
