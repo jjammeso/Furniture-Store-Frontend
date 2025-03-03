@@ -4,7 +4,7 @@ import { getToken } from "./lib/token";
 export const getDefaultCart = () => {
     const token = getToken()
     if (token) {
-        return fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/cart`, {
+        return fetch(`${process.env.NEXT_PUBLIC_API_URL}user/cart`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -24,7 +24,7 @@ export const getDefaultCart = () => {
 export const addToCart = (itemId, setCart) => {
     const token = getToken()
     if (token) {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/addtocart`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}user/addtocart`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -46,7 +46,7 @@ export const addToCart = (itemId, setCart) => {
 export const removeFromCart = (itemId, setCart) => {
     const token = getToken()
     if (token) {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/removefromcart`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}user/removefromcart`, {
             method: 'DELETE',
             headers: {
                 Accept: 'application/json',

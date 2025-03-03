@@ -24,7 +24,7 @@ function Navbar() {
     let token = getToken()
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/products`).then(res => res.json())
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}product/products`).then(res => res.json())
             .then(data => setAllProducts(data)).catch(err => console.log(err))
         const menu = (url.searchParams.get('category'));
         setCategory(menu)

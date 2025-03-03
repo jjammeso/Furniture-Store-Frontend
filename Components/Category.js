@@ -16,7 +16,7 @@ export default function Category({ menu='Amazing' }) {
   
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/products`).then(res => res.json())
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}product/products`).then(res => res.json())
       .then(data => setSortedProduct(data)).catch(err => console.log(err))
     }, [])
     console.log(category);

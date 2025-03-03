@@ -26,7 +26,7 @@ const LoginSignup = () => {
 
   const login = () => {
     if(userDetails.email != null && userDetails.email != '' && userDetails.password != null && userDetails.password != ''){
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/login`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}user/login`, {
         method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -54,7 +54,7 @@ const LoginSignup = () => {
       if(userDetails.name != null && userDetails.name != '' && userDetails.password != null && userDetails.password != ''
         && userDetails.email != null && userDetails.email != ''
       ){
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/signup`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}user/signup`, {
           method: 'POST',
           headers: {
             Accept: 'application/json',
