@@ -6,7 +6,7 @@ export const NewCollections = () => {
   const [new_collections, setNewCollection] = useState([]);
 
   useEffect(() => {
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/newcollection`).
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}product/newcollection`).
       then(res=>res.json())
       .then(data=>{
         setNewCollection(data.slice(0,8))})
