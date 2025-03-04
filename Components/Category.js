@@ -26,7 +26,7 @@ export default function Category({ menu='Amazing' }) {
 
     if (sortBy == 'name') {
       product.sort((a, b) => (
-        a.name.toLowerCase().localeCompare(b.name.toLowerCase)
+        a.name.toLowerCase().localeCompare(b.name.toLowerCase())
       ))
       setSortedProduct(product);
     } else if (sortBy == 'price') {
