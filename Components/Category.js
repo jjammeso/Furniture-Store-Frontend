@@ -73,9 +73,10 @@ export default function Category({ menu='Amazing' }) {
           }
         })}
       </div>
-      <div className={styles.shopcategory_loadmore}>
+      <br/>
+      {/* <div className={styles.shopcategory_loadmore}>
         Explore more
-      </div>
+      </div> */}
     </div>
   )
 }
