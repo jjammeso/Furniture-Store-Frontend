@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '@/styles/Offers.module.css'
-import exclusive_image from '@/public/products/pexels-monoar-rahman-22660-115747.jpg'
+import exclusive_image from '@/public/products/pexels-monoar-rahman-22660-115747.png'
 import Image from 'next/image'
 
 export const Offers = () => {
