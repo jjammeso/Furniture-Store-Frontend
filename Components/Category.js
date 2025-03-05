@@ -15,30 +15,24 @@ export default function Category({ menu='Amazing' }) {
   const [sortedProduct, setSortedProduct] = useState([]);
 
 
-  // function incrementCount(){
-  //   count.current += 1;
-  // }
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}product/products`).then(res => res.json())
-      .then(data => setSortedProduct(data)).catch(err => console.log(err))
+      .then(data => {setSortedProduct(data); updateItemCount(data);}).catch(err => console.log(err))
     }, [])
     console.log(category);
 
   useEffect(() => {
     let product = [...sortedProduct];
 
-    if (sortBy == 'name') {
-      product.sort((a, b) => (
-        a.name.toLowerCase().localeCompare(b.name.toLowerCase())
-      ))
-      setSortedProduct(product);
-    } else if (sortBy == 'price') {
-      product.sort((a, b) => a.new_price - b.new_price)
-      setSortedProduct(product)
-    } else {
-      setSortedProduct(product);
+    if (sortBy === 'name') {
+      product.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+    } else if (sortBy === 'price') {
+      product.sort((a, b) => a.new_price - b.new_price);
     }
+
+    setSortedProduct(product);
+    updateItemCount(product); 
   }, [sortBy])
 
   const updateItemCount = (products) => {
