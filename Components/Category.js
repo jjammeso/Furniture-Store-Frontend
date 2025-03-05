@@ -51,7 +51,7 @@ export default function Category({ menu='Amazing' }) {
       </div>
       <div className={styles.shop_category_indexSort}>
         <p>
-          <span>Showing 1-12 </span> out of 36 products
+          <span>Showing {sortedProduct.length} items</span>
         </p>
         <div>
           <select onChange={(e) => setSortBy(e.target.value)} className={styles.shopcategory_sort} >
