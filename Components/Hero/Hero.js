@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from '@/styles/Hero.module.css'
 import Image from 'next/image'
-import picture_4 from '@/public/products/pexels-marianne-67058-238377.jpg'
-import picture_2 from '@/public/products/pexels-itsterrymag-2988860.jpg'
-import picture_1 from '@/public/products/pexels-marina-podrez-3269296-11673566.jpg'
-import picture_3 from '@/public/products/pexels-tdcat-59321.jpg'
-import picture_5 from '@/public/products/pexels-jonathanborba-5570224.jpg'
+import picture_4 from '@/public/products/pexels-marianne-67058-238377.png'
+import picture_2 from '@/public/products/pexels-itsterrymag-2988860.png'
+import picture_1 from '@/public/products/pexels-marina-podrez-3269296-11673566.png'
+import picture_3 from '@/public/products/pexels-tdcat-59321.png'
+import picture_5 from '@/public/products/pexels-jonathanborba-5570224.png'
 
 function Hero() {
     return (
