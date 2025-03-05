@@ -11,13 +11,13 @@ import Image from 'next/image'
 export default function Category({ menu='Amazing' }) {
   const category = menu;
   const [sortBy, setSortBy] = useState(null);
-  const count = useRef(0);
+  const [count, setCount] = useState(0);
   const [sortedProduct, setSortedProduct] = useState([]);
 
-  function incrementCount(){
-    count+=1;
-  }
-  
+
+  // function incrementCount(){
+  //   count.current += 1;
+  // }
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}product/products`).then(res => res.json())
@@ -41,6 +41,13 @@ export default function Category({ menu='Amazing' }) {
     }
   }, [sortBy])
 
+  const updateItemCount = (products) => {
+    if (category === 'Amazing') {
+      setCount(products.length);
+    } else {
+      setCount(products.filter(item => item.category === category).length);
+    }
+  };
 
   return (
     <div className={styles.shop_category}>
@@ -66,17 +73,9 @@ export default function Category({ menu='Amazing' }) {
         </div>
       </div>
       <div className={styles.shopcategory_products}>
-        {category=='Amazing' && sortedProduct.map((item, i)=>{
-          return <Item key={i} item={item} />
-        })}
-        {category != 'Amazing' && sortedProduct.map((item, i) => {
-          if (item.category === category) {
-            incrementCount();
-            return <Item key={i} item={item} />
-          } else {
-            return null;
-          }
-        })}
+        {sortedProduct
+          .filter(item => category === 'Amazing' || item.category === category)
+          .map((item, i) => <Item key={i} item={item} />)}
       </div>
       <br/>
       {/* <div className={styles.shopcategory_loadmore}>
