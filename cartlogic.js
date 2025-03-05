@@ -24,7 +24,7 @@ export const getDefaultCart = () => {
 export const addToCart = (itemId, setCart) => {
     const token = getToken()
     if(!token){
-        alert('Please Sign up to add itmes to cart.')
+        alert('Please Sign up to add items to Cart.')
     }
     if (token) {
         fetch(`${process.env.NEXT_PUBLIC_API_URL}user/addtocart`, {

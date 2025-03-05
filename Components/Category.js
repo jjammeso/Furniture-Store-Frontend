@@ -41,7 +41,7 @@ export default function Category({ menu='Amazing' }) {
   return (
     <div className={styles.shop_category}>
       <div className={styles.shopcategory_banner}>
-        <h2>{category} Furniture</h2>
+        <h2 className={styles.category_title}>{category} Furniture</h2>
         {category == 'Home Office' && <Image src={homeOfficeBanner} alt='' />}
         {category == 'Bedroom' && <Image  src={bedroomBanner} alt='' />}
         {category == 'Kitchen' && <Image src={KitchenBanner} alt='' />}
@@ -54,8 +54,8 @@ export default function Category({ menu='Amazing' }) {
           <span>Showing 1-12 </span> out of 36 products
         </p>
         <div>
-          <select onChange={(e) => setSortBy(e.target.value)} className={styles.shopcategory_sort}>
-            <option value=''>Sort by</option>
+          <select onChange={(e) => setSortBy(e.target.value)} className={styles.shopcategory_sort} >
+            <option value='' disabled selected>Sort by</option>
             <option value='name'>name</option>
             <option value='price'>price</option>
           </select>
