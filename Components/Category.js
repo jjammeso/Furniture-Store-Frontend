@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from '@/styles/category.module.css'
 import Item from './Item/Item'
 import homeOfficeBanner from '@/public/products/pexels-pixabay-259962.png'
@@ -11,7 +11,7 @@ import Image from 'next/image'
 export default function Category({ menu='Amazing' }) {
   const category = menu;
   const [sortBy, setSortBy] = useState(null);
-  const [count, setCount] = useState(0);
+  const count = useRef(0);
   const [sortedProduct, setSortedProduct] = useState([]);
 
   
@@ -68,7 +68,7 @@ export default function Category({ menu='Amazing' }) {
         })}
         {category != 'Amazing' && sortedProduct.map((item, i) => {
           if (item.category === category) {
-            count++;
+            count += 1;
             return <Item key={i} item={item} />
           } else {
             return null;
