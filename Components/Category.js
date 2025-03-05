@@ -14,6 +14,9 @@ export default function Category({ menu='Amazing' }) {
   const count = useRef(0);
   const [sortedProduct, setSortedProduct] = useState([]);
 
+  function incrementCount(){
+    count+=1;
+  }
   
 
   useEffect(() => {
@@ -68,7 +71,7 @@ export default function Category({ menu='Amazing' }) {
         })}
         {category != 'Amazing' && sortedProduct.map((item, i) => {
           if (item.category === category) {
-            count += 1;
+            incrementCount();
             return <Item key={i} item={item} />
           } else {
             return null;
