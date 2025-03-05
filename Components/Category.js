@@ -11,6 +11,7 @@ import Image from 'next/image'
 export default function Category({ menu='Amazing' }) {
   const category = menu;
   const [sortBy, setSortBy] = useState(null);
+  const [count, setCount] = useState(0);
   const [sortedProduct, setSortedProduct] = useState([]);
 
   
@@ -51,7 +52,7 @@ export default function Category({ menu='Amazing' }) {
       </div>
       <div className={styles.shop_category_indexSort}>
         <p>
-          <span>Showing {sortedProduct.length} items</span>
+          <span>Showing {count} items</span>
         </p>
         <div>
           <select onChange={(e) => setSortBy(e.target.value)} className={styles.shopcategory_sort} >
@@ -67,6 +68,7 @@ export default function Category({ menu='Amazing' }) {
         })}
         {category != 'Amazing' && sortedProduct.map((item, i) => {
           if (item.category === category) {
+            count++;
             return <Item key={i} item={item} />
           } else {
             return null;
