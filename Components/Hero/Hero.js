@@ -11,7 +11,8 @@ function Hero() {
     return (
         <div className={styles.hero}>
             <div className={styles.hero_text}>
-                <h2>Welcome to ComfyHome – Where Comfort Meets Style</h2>
+                <h2>Welcome to <span>Comfy</span>Home</h2>
+                <br/>
                 <p>Discover a world where each piece of furniture adds warmth and style to your home.
                 </p>
             </div>

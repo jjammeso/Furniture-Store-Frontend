@@ -10,7 +10,6 @@ function Popular() {
   return (
     <div className={styles.popular}>
               <hr/>
-
         <h1>Trending Now</h1>
         <Slider product={product}/>
     </div>

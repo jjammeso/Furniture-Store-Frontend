@@ -20,17 +20,23 @@
 .hero_text{
     background: var(--pink);
     padding: 20px;
-    width: 100%;
+    width: 87%;
+}
+
+.hero_text span{
+    color: #171717;
 }
 
 .hero_text h2{
-    font-size: 30px;
+    font-size: 68px;
     color: white;
+
 }
 
 .hero_text p{
     font-size: 20px;
-    color: var(--yellow);
+    color: #171717;
+    font-weight: 600;
 }
 
 .hero .hero_container{
