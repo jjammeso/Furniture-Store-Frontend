@@ -51,7 +51,8 @@
     width: 83%;
     display: flex;
     flex-wrap: wrap;
-    padding: 15px 0;
+    gap: 10px;
+    padding: 20px 0;
 }
 
 .shop_category_indexSort select{
